@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.jpdr.features.home.HomeContent
 
 @Composable
 fun AppNavHost(navController: NavHostController, paddingValues: PaddingValues) {
@@ -28,13 +29,6 @@ fun AppNavHost(navController: NavHostController, paddingValues: PaddingValues) {
         composable(Destination.PROFILE.route) {
             ProfileContent(modifier = Modifier.padding(paddingValues))
         }
-    }
-}
-
-@Composable
-fun HomeContent(modifier: Modifier = Modifier) {
-    Column(modifier = modifier) {
-        Text("HOME")
     }
 }
 
