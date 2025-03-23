@@ -1,4 +1,4 @@
-package com.jpdr.gbcompose
+package com.jpdr.gbcompose.theme
 
 import androidx.compose.material3.ColorScheme
 import androidx.compose.ui.graphics.Color

@@ -22,4 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "GymBuddy"
 include(":app")
 include(":features:home")
-include(":GBCompose")
+include(":gymbuddy-common-ui")

@@ -38,6 +38,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":gymbuddy-common-ui"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

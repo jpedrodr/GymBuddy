@@ -41,7 +41,7 @@ android {
 
 dependencies {
     implementation(project(":features:home"))
-    implementation(project(":GBCompose"))
+    implementation(project(":gymbuddy-common-ui"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

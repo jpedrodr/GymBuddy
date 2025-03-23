@@ -1,5 +1,6 @@
 package com.jpdr.gymbuddy.navigation
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
@@ -34,28 +35,44 @@ fun GymBuddyNavHost(navController: NavHostController, paddingValues: PaddingValu
 
 @Composable
 fun WorkoutsContent(modifier: Modifier = Modifier) {
-    Column(modifier = modifier) {
+    Column(
+        modifier = modifier,
+        verticalArrangement = Arrangement.Center
+    ) {
         Text("WORKOUTS")
+        Text("Log a new workout or follow saved routines.")
     }
 }
 
 @Composable
 fun HistoryContent(modifier: Modifier = Modifier) {
-    Column(modifier = modifier) {
+    Column(
+        modifier = modifier,
+        verticalArrangement = Arrangement.Center
+    ) {
         Text("HISTORY")
+        Text("View past workouts, filter by date, type, etc.")
     }
 }
 
 @Composable
 fun ProgressContent(modifier: Modifier = Modifier) {
-    Column(modifier = modifier) {
+    Column(
+        modifier = modifier,
+        verticalArrangement = Arrangement.Center
+    ) {
         Text("PROGRESS")
+        Text("Visualize stats and track goals.")
     }
 }
 
 @Composable
 fun ProfileContent(modifier: Modifier = Modifier) {
-    Column(modifier = modifier) {
+    Column(
+        modifier = modifier,
+        verticalArrangement = Arrangement.Center
+    ) {
         Text("PROFILE")
+        Text("Manage profile, goals, reminders, and notifications.")
     }
 }
