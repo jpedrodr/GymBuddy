@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.jpdr.gymbuddy.ui.theme.GymBuddyTheme
+import com.jpdr.gbcompose.GymBuddyTheme
 import com.jpdr.gymbuddy.ui.views.GymBuddyContent
 
 class MainActivity : ComponentActivity() {

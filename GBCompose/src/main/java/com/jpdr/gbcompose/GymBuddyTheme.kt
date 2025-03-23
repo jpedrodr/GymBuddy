@@ -1,6 +1,5 @@
-package com.jpdr.gymbuddy.ui.theme
+package com.jpdr.gbcompose
 
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
@@ -8,50 +7,52 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+private val GymBuddyDarkColorScheme = darkColorScheme(
+    primary = DarkOrangePrimary,
+    onPrimary = Color.Black,
+    secondary = DarkGreenSecondary,
+    onSecondary = Color.Black,
+    background = DarkBackground,
+    onBackground = LightText,
+    surface = DarkSurface,
+    onSurface = LightText,
+    outline = MediumGrayText
 )
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
+private val GymBuddyLightColorScheme = lightColorScheme(
+    primary = OrangePrimary,
     onPrimary = Color.White,
+    secondary = GreenSecondary,
     onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    background = LightBackground,
+    onBackground = DarkText,
+    surface = LightSurface,
+    onSurface = DarkText,
+    outline = GrayText // Used for dividers, borders, etc.
 )
 
 @Composable
 fun GymBuddyTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+        dynamicColor -> {
             val context = LocalContext.current
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
 
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+        darkTheme -> GymBuddyDarkColorScheme
+        else -> GymBuddyLightColorScheme
     }
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = GBTypography,
         content = content
     )
 }

@@ -12,7 +12,7 @@ import androidx.navigation.compose.composable
 import com.jpdr.features.home.HomeContent
 
 @Composable
-fun AppNavHost(navController: NavHostController, paddingValues: PaddingValues) {
+fun GymBuddyNavHost(navController: NavHostController, paddingValues: PaddingValues) {
     NavHost(navController = navController, startDestination = Destination.HOME.route) {
         composable(Destination.HOME.route) {
             HomeContent(modifier = Modifier.padding(paddingValues))
