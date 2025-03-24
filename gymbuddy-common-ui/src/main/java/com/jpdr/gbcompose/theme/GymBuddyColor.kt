@@ -1,6 +1,5 @@
 package com.jpdr.gbcompose.theme
 
-import androidx.compose.material3.ColorScheme
 import androidx.compose.ui.graphics.Color
 
 val OrangePrimary = Color(0xFFFF5722)   // Bright Orange (Energetic)
@@ -16,6 +15,3 @@ val DarkBackground = Color(0xFF121212)  // Almost black background
 val DarkSurface = Color(0xFF1E1E1E)     // Dark gray surface
 val LightText = Color(0xFFE0E0E0)       // Light gray text for readability
 val MediumGrayText = Color(0xFFBDBDBD)  // Medium gray for secondary text
-
-val ColorScheme.customGrey
-    get() = Color(0xFFFFD700)

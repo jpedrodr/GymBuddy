@@ -2,7 +2,6 @@ package com.jpdr.gymbuddy.ui.views
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
@@ -66,19 +65,20 @@ fun GymBuddyBottomBar(
 
 
 @Composable
-private fun RowScope.GymBuddyNavItem(
+private fun GymBuddyNavItem(
     destination: Destination,
     isSelected: Boolean,
     onClick: () -> Unit
 ) {
-    val iconTint = if (isSelected) {
-        MaterialTheme.colorScheme.primary
-    } else {
-        MaterialTheme.colorScheme.outline
-    }
-
     if (destination == Destination.WORKOUTS) {
+        val iconTint = if (isSelected) {
+            MaterialTheme.colorScheme.primary
+        } else {
+            MaterialTheme.colorScheme.onPrimary
+        }
+
         FloatingActionButton(
+            containerColor = MaterialTheme.colorScheme.onBackground,
             contentColor = iconTint,
             onClick = onClick
         ) {
@@ -91,6 +91,12 @@ private fun RowScope.GymBuddyNavItem(
             Destination.HISTORY -> Icons.Filled.History
             Destination.PROFILE -> Icons.Filled.AccountCircle
             Destination.PROGRESS -> Icons.Filled.Timeline
+        }
+
+        val iconTint = if (isSelected) {
+            MaterialTheme.colorScheme.primary
+        } else {
+            MaterialTheme.colorScheme.onSurface
         }
 
         IconButton(
@@ -113,4 +119,3 @@ fun GymBuddyBottomBarPreview() {
         GymBuddyBottomBar(rememberNavController())
     }
 }
-

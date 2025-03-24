@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -16,19 +17,19 @@ import com.jpdr.features.home.HomeContent
 fun GymBuddyNavHost(navController: NavHostController, paddingValues: PaddingValues) {
     NavHost(navController = navController, startDestination = Destination.HOME.route) {
         composable(Destination.HOME.route) {
-            HomeContent(modifier = Modifier.padding(paddingValues))
+            HomeContent(modifier = Modifier.padding(paddingValues).padding(16.dp))
         }
         composable(Destination.WORKOUTS.route) {
-            WorkoutsContent(modifier = Modifier.padding(paddingValues))
+            WorkoutsContent(modifier = Modifier.padding(paddingValues).padding(16.dp))
         }
         composable(Destination.HISTORY.route) {
-            HistoryContent(modifier = Modifier.padding(paddingValues))
+            HistoryContent(modifier = Modifier.padding(paddingValues).padding(16.dp))
         }
         composable(Destination.PROGRESS.route) {
-            ProgressContent(modifier = Modifier.padding(paddingValues))
+            ProgressContent(modifier = Modifier.padding(paddingValues).padding(16.dp))
         }
         composable(Destination.PROFILE.route) {
-            ProfileContent(modifier = Modifier.padding(paddingValues))
+            ProfileContent(modifier = Modifier.padding(paddingValues).padding(16.dp))
         }
     }
 }
