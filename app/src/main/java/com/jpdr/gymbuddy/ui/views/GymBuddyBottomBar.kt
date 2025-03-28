@@ -74,7 +74,7 @@ private fun GymBuddyNavItem(
         val iconTint = if (isSelected) {
             MaterialTheme.colorScheme.primary
         } else {
-            MaterialTheme.colorScheme.onPrimary
+            MaterialTheme.colorScheme.background
         }
 
         FloatingActionButton(
