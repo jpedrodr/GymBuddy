@@ -17,7 +17,11 @@ fun GymBuddyContent() {
         modifier = Modifier.fillMaxSize(),
         bottomBar = { GymBuddyBottomBar(navController) }
     ) { innerPadding ->
-        GymBuddyNavHost(navController, innerPadding)
+        GymBuddyNavHost(
+            navController = navController,
+            paddingValues = innerPadding,
+            modifier = Modifier.fillMaxSize()
+        )
     }
 }
 
