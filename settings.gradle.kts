@@ -21,5 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "GymBuddy"
 include(":app")
-include(":features:home")
 include(":gymbuddy-common-ui")
+include(":feature:home")
+include(":feature:workout")
