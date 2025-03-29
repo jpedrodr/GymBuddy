@@ -1,4 +1,4 @@
-package com.jpdr.gymbuddy
+package com.gymbuddy
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

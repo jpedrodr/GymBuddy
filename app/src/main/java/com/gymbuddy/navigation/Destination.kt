@@ -1,4 +1,4 @@
-package com.jpdr.gymbuddy.navigation
+package com.gymbuddy.navigation
 
 sealed class Destination(val route: String) {
     object HOME: Destination("home") //  Summary of progress, upcoming workouts, and achievements.

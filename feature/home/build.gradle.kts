@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.jpdr.feature.home"
+    namespace = "com.gymbuddy.feature.home"
     compileSdk = 35
 
     defaultConfig {

@@ -1,4 +1,4 @@
-package com.jpdr.gbcompose.preview
+package com.gymbuddy.gbcompose.preview
 
 import android.content.res.Configuration
 import androidx.compose.ui.tooling.preview.Preview

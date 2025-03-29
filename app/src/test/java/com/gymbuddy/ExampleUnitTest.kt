@@ -1,4 +1,4 @@
-package com.jpdr.gymbuddy
+package com.gymbuddy
 
 import org.junit.Test
 

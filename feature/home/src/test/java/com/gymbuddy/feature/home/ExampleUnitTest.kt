@@ -1,4 +1,4 @@
-package com.jpdr.feature.home
+package com.gymbuddy.feature.home
 
 import org.junit.Test
 

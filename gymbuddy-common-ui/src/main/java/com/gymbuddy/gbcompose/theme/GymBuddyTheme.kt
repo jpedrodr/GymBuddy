@@ -6,7 +6,6 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import com.jpdr.gbcompose.theme.GymBuddyTypography
 
 //Summary of Color Roles:
 //Primary: The dominant color for your app, used for key interactive elements.

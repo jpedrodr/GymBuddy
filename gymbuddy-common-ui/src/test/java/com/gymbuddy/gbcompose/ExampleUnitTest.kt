@@ -1,4 +1,4 @@
-package com.jpdr.gbcompose
+package com.gymbuddy.gbcompose
 
 import org.junit.Test
 

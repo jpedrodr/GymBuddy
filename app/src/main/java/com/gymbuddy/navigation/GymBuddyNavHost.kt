@@ -13,7 +13,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.gymbuddy.feature.home.HomeContent
 import com.gymbuddy.feature.workout.WorkoutContent
-import com.jpdr.gymbuddy.navigation.Destination
+import com.gymbuddy.navigation.Destination
 
 @Composable
 fun GymBuddyNavHost(navController: NavHostController, paddingValues: PaddingValues, modifier: Modifier = Modifier) {

@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.jpdr.gymbuddy"
+    namespace = "com.gymbuddy"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.jpdr.gymbuddy"
+        applicationId = "com.gymbuddy"
         minSdk = 33
         targetSdk = 35
         versionCode = 1

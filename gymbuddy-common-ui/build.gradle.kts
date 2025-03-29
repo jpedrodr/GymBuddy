@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.jpdr.gymbuddy.common.ui"
+    namespace = "com.gymbuddy.common.ui"
     compileSdk = 35
 
     defaultConfig {

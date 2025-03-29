@@ -1,4 +1,4 @@
-package com.jpdr.gymbuddy.ui.views
+package com.gymbuddy.ui.views
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -23,9 +23,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.jpdr.gbcompose.preview.PreviewWithModes
+import com.gymbuddy.gbcompose.preview.PreviewWithModes
 import com.gymbuddy.gbcompose.theme.GymBuddyTheme
-import com.jpdr.gymbuddy.navigation.Destination
+import com.gymbuddy.navigation.Destination
 
 @Composable
 fun GymBuddyBottomBar(
@@ -82,7 +82,10 @@ private fun GymBuddyNavItem(
             contentColor = iconTint,
             onClick = onClick
         ) {
-            Icon(Icons.Filled.FitnessCenter, destination.route)
+            Icon(
+                imageVector = Icons.Filled.FitnessCenter,
+                contentDescription = destination.route
+            )
         }
     } else {
         val icon = when (destination) {
