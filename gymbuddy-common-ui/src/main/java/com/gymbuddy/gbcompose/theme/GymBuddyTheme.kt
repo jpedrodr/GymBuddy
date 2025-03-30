@@ -22,25 +22,27 @@ import androidx.compose.ui.graphics.Color
 private val GymBuddyLightColorScheme = lightColorScheme(
     primary = Color(0xFFFF4C7A),
     onPrimary = Color.White,
-    secondary = Color(0xFF4AE3D1),
-    onSecondary = Color(0xFF1C1C1E),
+    secondary = Color(0xFF5673C8),
+    onSecondary = Color.White,
     background = Color(0xFFFAFAFA),
     onBackground = Color(0xFF2F4858),
-    surface = Color(0xFFF1F1F1),
+    surface = Color(0xFFEEEEEE),
     onSurface = Color(0xFF1C1C1E),
-    error = Color(0xFFFF3B30)
+    error = Color(0xFFFF3B30),
+    onError = Color.White
 )
 
 private val GymBuddyDarkColorScheme = darkColorScheme(
     primary = Color(0xFFFF4C7A),
     onPrimary = Color.White,
-    secondary = Color(0xFF4AE3D1),
-    onSecondary = Color(0xFF1C1C1E),
+    secondary = Color(0xFF5673C8),
+    onSecondary = Color.White,
     background = Color(0xFF2F4858),
     onBackground = Color(0xFFE0E0E0),
     surface = Color(0xFF1C2C3A),
     onSurface = Color(0xFFE0E0E0),
-    error = Color(0xFFFF3B30)
+    error = Color(0xFFFF3B30),
+    onError = Color.White
 )
 
 @Composable

@@ -12,7 +12,9 @@ import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Timeline
 import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -71,15 +73,25 @@ private fun GymBuddyNavItem(
     onClick: () -> Unit
 ) {
     if (destination == Destination.WORKOUTS) {
-        val iconTint = if (isSelected) {
+//        val iconColor = if (isSelected) {
+//            MaterialTheme.colorScheme.primary
+//        } else {
+//            MaterialTheme.colorScheme.background
+//        }
+
+        val iconColor = MaterialTheme.colorScheme.onPrimary
+
+        val containerColor = if (isSelected) {
             MaterialTheme.colorScheme.primary
         } else {
-            MaterialTheme.colorScheme.background
+            MaterialTheme.colorScheme.onBackground
         }
 
         FloatingActionButton(
-            containerColor = MaterialTheme.colorScheme.onBackground,
-            contentColor = iconTint,
+//            containerColor = MaterialTheme.colorScheme.onBackground,
+            containerColor = containerColor,
+            elevation = FloatingActionButtonDefaults.loweredElevation(),
+            contentColor = iconColor,
             onClick = onClick
         ) {
             Icon(

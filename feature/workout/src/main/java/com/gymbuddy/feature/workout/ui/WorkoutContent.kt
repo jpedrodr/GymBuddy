@@ -86,7 +86,7 @@ private fun StartWorkoutButton(modifier: Modifier = Modifier, onClick: () -> Uni
     ElevatedButton(
         modifier = modifier,
         onClick = onClick,
-        elevation = ButtonDefaults.elevatedButtonElevation(defaultElevation = 8.dp),
+        elevation = ButtonDefaults.elevatedButtonElevation(defaultElevation = 4.dp),
         colors = ButtonDefaults.elevatedButtonColors().copy(
             containerColor = MaterialTheme.colorScheme.primary
         )
