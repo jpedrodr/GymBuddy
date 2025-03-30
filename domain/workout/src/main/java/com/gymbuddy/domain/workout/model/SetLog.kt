@@ -1,4 +1,4 @@
-package com.gymbuddy.feature.workout.model
+package com.gymbuddy.domain.workout.model
 
 /**
  * Defines a set of exercise

@@ -1,4 +1,4 @@
-package com.gymbuddy.feature.workout.model
+package com.gymbuddy.domain.workout.model
 
 /**
  * A complete workout session with exercises

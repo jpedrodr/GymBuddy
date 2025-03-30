@@ -1,10 +1,12 @@
 package com.gymbuddy.feature.workout.ui
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
@@ -22,11 +24,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.gymbuddy.feature.workout.R
+import com.gymbuddy.feature.workout.WorkoutListIntent
 import com.gymbuddy.feature.workout.WorkoutListViewModel
 import com.gymbuddy.gbcompose.preview.PreviewWithModes
 import com.gymbuddy.gbcompose.theme.GymBuddyTheme
@@ -56,16 +61,19 @@ fun WorkoutListContentUI(
             modifier = Modifier
                 .fillMaxSize(),
         ) {
-
             Column(
                 modifier = Modifier
-                    .padding(top = 16.dp)
+                    .padding(top = 12.dp)
                     .fillMaxSize()
                     .verticalScroll(rememberScrollState())
-                    .padding(bottom = 64.dp)
+                    .padding(bottom = 64.dp, top = 4.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
                 uiState.plans.forEach {
-                    WorkoutPlanUI(it)
+                    WorkoutPlanUI(
+                        workoutPlan = it,
+                        onClick = { viewModel.handleIntent(WorkoutListIntent.SelectPlan(it)) }
+                    )
                 }
             }
 
@@ -74,15 +82,15 @@ fun WorkoutListContentUI(
                     .fillMaxWidth()
                     .align(Alignment.BottomCenter)
             ) {
-                StartWorkoutButton(onClick = {}, modifier = Modifier.align(Alignment.Center))
-                AddWorkoutButton(onClick = {}, modifier = Modifier.align(Alignment.CenterEnd))
+                StartWorkoutButtonUI(onClick = {}, modifier = Modifier.align(Alignment.Center))
+                AddWorkoutButtonUI(onClick = {}, modifier = Modifier.align(Alignment.CenterEnd))
             }
         }
     }
 }
 
 @Composable
-private fun StartWorkoutButton(modifier: Modifier = Modifier, onClick: () -> Unit) {
+private fun StartWorkoutButtonUI(modifier: Modifier = Modifier, onClick: () -> Unit) {
     ElevatedButton(
         modifier = modifier,
         onClick = onClick,
@@ -106,7 +114,7 @@ private fun StartWorkoutButton(modifier: Modifier = Modifier, onClick: () -> Uni
 }
 
 @Composable
-private fun AddWorkoutButton(modifier: Modifier = Modifier, onClick: () -> Unit) {
+private fun AddWorkoutButtonUI(modifier: Modifier = Modifier, onClick: () -> Unit) {
     FloatingActionButton(
         modifier = modifier,
         onClick = onClick,
