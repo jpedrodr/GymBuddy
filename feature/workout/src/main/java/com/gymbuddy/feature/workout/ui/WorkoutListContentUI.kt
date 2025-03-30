@@ -29,16 +29,19 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.gymbuddy.feature.workout.R
 import com.gymbuddy.feature.workout.WorkoutListEvent
 import com.gymbuddy.feature.workout.WorkoutListIntent
 import com.gymbuddy.feature.workout.WorkoutListViewModel
 import com.gymbuddy.gbcompose.preview.PreviewWithModes
 import com.gymbuddy.gbcompose.theme.GymBuddyTheme
+import com.gymbuddy.navigation.Destination
+import com.gymbuddy.navigation.navigateTo
 
 @Composable
 fun WorkoutListContentUI(
-//    navController: NavController,
+    navController: NavController,
     modifier: Modifier = Modifier,
     viewModel: WorkoutListViewModel = hiltViewModel()
 ) {
@@ -48,7 +51,7 @@ fun WorkoutListContentUI(
         viewModel.events.collect { event ->
             when (event) {
                 is WorkoutListEvent.StartWorkout -> {
-//                    navController.navigate(Destination.WorkoutSession.route)
+                    navController.navigateTo(Destination.WorkoutSession(event.workoutPlan.id))
                 }
             }
         }
@@ -110,7 +113,11 @@ fun WorkoutListContentUI(
 }
 
 @Composable
-private fun StartWorkoutButtonUI(onClick: () -> Unit, enabled: Boolean, modifier: Modifier = Modifier, ) {
+private fun StartWorkoutButtonUI(
+    onClick: () -> Unit,
+    enabled: Boolean,
+    modifier: Modifier = Modifier,
+) {
     ElevatedButton(
         modifier = modifier,
         onClick = onClick,
@@ -154,6 +161,8 @@ private fun AddWorkoutButtonUI(modifier: Modifier = Modifier, onClick: () -> Uni
 @PreviewWithModes
 fun WorkoutContentPreview() {
     GymBuddyTheme {
-        WorkoutListContentUI()
+        WorkoutListContentUI(
+            navController = rememberNavController()
+        )
     }
 }

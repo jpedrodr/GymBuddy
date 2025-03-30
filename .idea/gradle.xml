@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/feature/home" />
             <option value="$PROJECT_DIR$/feature/workout" />
             <option value="$PROJECT_DIR$/gymbuddy-common-ui" />
+            <option value="$PROJECT_DIR$/navigation" />
           </set>
         </option>
       </GradleProjectSettings>

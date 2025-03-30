@@ -27,6 +27,7 @@ import androidx.navigation.compose.rememberNavController
 import com.gymbuddy.gbcompose.preview.PreviewWithModes
 import com.gymbuddy.gbcompose.theme.GymBuddyTheme
 import com.gymbuddy.navigation.Destination
+import com.gymbuddy.navigation.navigateTo
 
 @Composable
 fun GymBuddyBottomBar(
@@ -57,7 +58,7 @@ fun GymBuddyBottomBar(
                 GymBuddyNavItem(
                     destination = dest,
                     isSelected = currentDestination == dest.route,
-                    onClick = { navController.navigate(dest.route) }
+                    onClick = { navController.navigateTo(dest) }
                 )
             }
         }
@@ -72,12 +73,6 @@ private fun GymBuddyNavItem(
     onClick: () -> Unit
 ) {
     if (destination == Destination.WorkoutsList) {
-//        val iconColor = if (isSelected) {
-//            MaterialTheme.colorScheme.primary
-//        } else {
-//            MaterialTheme.colorScheme.background
-//        }
-
         val iconColor = MaterialTheme.colorScheme.onPrimary
 
         val containerColor = if (isSelected) {
@@ -87,7 +82,6 @@ private fun GymBuddyNavItem(
         }
 
         FloatingActionButton(
-//            containerColor = MaterialTheme.colorScheme.onBackground,
             containerColor = containerColor,
             elevation = FloatingActionButtonDefaults.loweredElevation(),
             contentColor = iconColor,
@@ -105,6 +99,7 @@ private fun GymBuddyNavItem(
             Destination.History -> Icons.Filled.History
             Destination.Profile -> Icons.Filled.AccountCircle
             Destination.Progress -> Icons.Filled.Timeline
+            else -> throw IllegalStateException("Destination $destination not supported in GymBuddyBottomBar")
         }
 
         val iconTint = if (isSelected) {
