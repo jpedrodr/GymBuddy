@@ -12,7 +12,6 @@ import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Timeline
 import androidx.compose.material3.BottomAppBar
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
@@ -49,11 +48,11 @@ fun GymBuddyBottomBar(
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             listOf(
-                Destination.HOME,
-                Destination.HISTORY,
-                Destination.WORKOUTS,
-                Destination.PROGRESS,
-                Destination.PROFILE
+                Destination.Home,
+                Destination.History,
+                Destination.WorkoutsList,
+                Destination.Progress,
+                Destination.Profile
             ).forEach { dest ->
                 GymBuddyNavItem(
                     destination = dest,
@@ -72,7 +71,7 @@ private fun GymBuddyNavItem(
     isSelected: Boolean,
     onClick: () -> Unit
 ) {
-    if (destination == Destination.WORKOUTS) {
+    if (destination == Destination.WorkoutsList) {
 //        val iconColor = if (isSelected) {
 //            MaterialTheme.colorScheme.primary
 //        } else {
@@ -101,11 +100,11 @@ private fun GymBuddyNavItem(
         }
     } else {
         val icon = when (destination) {
-            Destination.HOME -> Icons.Filled.Home
-            Destination.WORKOUTS -> Icons.Filled.FitnessCenter
-            Destination.HISTORY -> Icons.Filled.History
-            Destination.PROFILE -> Icons.Filled.AccountCircle
-            Destination.PROGRESS -> Icons.Filled.Timeline
+            Destination.Home -> Icons.Filled.Home
+            Destination.WorkoutsList -> Icons.Filled.FitnessCenter
+            Destination.History -> Icons.Filled.History
+            Destination.Profile -> Icons.Filled.AccountCircle
+            Destination.Progress -> Icons.Filled.Timeline
         }
 
         val iconTint = if (isSelected) {

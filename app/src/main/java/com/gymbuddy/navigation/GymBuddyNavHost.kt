@@ -18,24 +18,24 @@ import com.gymbuddy.feature.workout.ui.WorkoutListContentUI
 fun GymBuddyNavHost(navController: NavHostController, paddingValues: PaddingValues, modifier: Modifier = Modifier) {
     NavHost(
         navController = navController,
-        startDestination = Destination.WORKOUTS.route,
+        startDestination = Destination.WorkoutsList.route,
         modifier = modifier
             .padding(paddingValues)
             .padding(16.dp)
     ) {
-        composable(Destination.HOME.route) {
+        composable(Destination.Home.route) {
             HomeContent()
         }
-        composable(Destination.WORKOUTS.route) {
+        composable(Destination.WorkoutsList.route) {
             WorkoutListContentUI()
         }
-        composable(Destination.HISTORY.route) {
+        composable(Destination.History.route) {
             HistoryContent()
         }
-        composable(Destination.PROGRESS.route) {
+        composable(Destination.Progress.route) {
             ProgressContent()
         }
-        composable(Destination.PROFILE.route) {
+        composable(Destination.Profile.route) {
             ProfileContent()
         }
     }
