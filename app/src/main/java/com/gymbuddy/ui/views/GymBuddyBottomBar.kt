@@ -28,6 +28,8 @@ import com.gymbuddy.gbcompose.preview.PreviewWithModes
 import com.gymbuddy.gbcompose.theme.GymBuddyTheme
 import com.gymbuddy.navigation.Destination
 import com.gymbuddy.navigation.navigateTo
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 
 @Composable
 fun GymBuddyBottomBar(
@@ -40,8 +42,10 @@ fun GymBuddyBottomBar(
         containerColor = MaterialTheme.colorScheme.surface,
         tonalElevation = 8.dp
     ) {
-        val currentDestination =
-            navController.currentBackStackEntryAsState().value?.destination?.route
+        val backstackEntry by navController.currentBackStackEntryAsState()
+        val currentDestination = remember(backstackEntry) {
+            backstackEntry?.destination?.route
+        }
 
         Row(
             modifier = Modifier.fillMaxWidth(),

@@ -9,15 +9,6 @@ sealed class Destination(val route: String) {
     // Log a new workout or follow saved routines.
     data object WorkoutsList : Destination("workouts/list")
 
-    // An actual workout session based on a workout plan
-    data class WorkoutSession(val workoutPlanId: String) :
-        Destination("$BASE_ROUTE/$workoutPlanId") {
-        companion object {
-            const val BASE_ROUTE = "workout/session"
-            const val WORKOUT_PLAN_ID = "workoutPlanId"
-        }
-    }
-
     // View past workouts, filter by date, type, etc.
     data object History : Destination("history")
 
@@ -26,6 +17,16 @@ sealed class Destination(val route: String) {
 
     // Manage profile, goals, reminders, and notifications.
     data object Profile : Destination("profile")
+
+    // An actual workout session based on a workout plan
+    data class WorkoutSession(val workoutPlanId: String) :
+        Destination("$BASE_ROUTE/$workoutPlanId") {
+        companion object {
+            private const val BASE_ROUTE = "workout/session/withPlan"
+            const val WORKOUT_PLAN_ID = "workoutPlanId"
+            const val ROUTE = "$BASE_ROUTE/{${WORKOUT_PLAN_ID}}"
+        }
+    }
 }
 
 fun NavController.navigateTo(destination: Destination) {

@@ -1,5 +1,9 @@
 package com.gymbuddy.navigation
 
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -8,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -31,37 +36,46 @@ fun GymBuddyNavHost(
             .padding(paddingValues)
             .padding(16.dp)
     ) {
-        composable(Destination.Home.route) {
-            HomeContent()
-        }
-
-        composable(Destination.WorkoutsList.route) {
-            WorkoutListContentUI(navController = navController)
-        }
+        topLevelRoutes(navController = navController)
 
         composable(
-            route = "${WorkoutSession.BASE_ROUTE}/{${WorkoutSession.WORKOUT_PLAN_ID}}",
-            arguments = listOf(navArgument(WorkoutSession.WORKOUT_PLAN_ID) { type = NavType.StringType })
+            route = WorkoutSession.ROUTE,
+            arguments = listOf(navArgument(WorkoutSession.WORKOUT_PLAN_ID) {
+                type = NavType.StringType
+            }),
+            enterTransition = { fadeIn() + slideInVertically(initialOffsetY = { it }) },
+            exitTransition = { fadeOut() + slideOutVertically(targetOffsetY = { it }) }
         ) { backStackEntry ->
             val workoutPlanId = backStackEntry.arguments?.getString(WorkoutSession.WORKOUT_PLAN_ID)
-            println("joaorosa | workoutPlanId from route is $workoutPlanId")
-            // joaorosa test this
             if (workoutPlanId != null) {
                 WorkoutSessionContentUI(workoutPlanId = workoutPlanId)
             }
         }
+    }
+}
 
-        composable(Destination.History.route) {
-            HistoryContent()
-        }
+/**
+ * The high level routes of the app, the ones accessible from the bottom bart
+ */
+private fun NavGraphBuilder.topLevelRoutes(navController: NavHostController) {
+    composable(Destination.Home.route) {
+        HomeContent()
+    }
 
-        composable(Destination.Progress.route) {
-            ProgressContent()
-        }
+    composable(Destination.WorkoutsList.route) {
+        WorkoutListContentUI(navController = navController)
+    }
 
-        composable(Destination.Profile.route) {
-            ProfileContent()
-        }
+    composable(Destination.History.route) {
+        HistoryContent()
+    }
+
+    composable(Destination.Progress.route) {
+        ProgressContent()
+    }
+
+    composable(Destination.Profile.route) {
+        ProfileContent()
     }
 }
 
