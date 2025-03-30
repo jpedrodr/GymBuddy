@@ -1,4 +1,4 @@
-package com.gymbuddy.gymbuddy.navigation
+package com.gymbuddy.navigation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -12,26 +12,31 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.gymbuddy.feature.home.HomeContent
-import com.gymbuddy.feature.workout.WorkoutContent
-import com.gymbuddy.navigation.Destination
+import com.gymbuddy.feature.workout.ui.WorkoutListContentUI
 
 @Composable
 fun GymBuddyNavHost(navController: NavHostController, paddingValues: PaddingValues, modifier: Modifier = Modifier) {
-    NavHost(navController = navController, startDestination = Destination.HOME.route) {
+    NavHost(
+        navController = navController,
+        startDestination = Destination.WORKOUTS.route,
+        modifier = modifier
+            .padding(paddingValues)
+            .padding(16.dp)
+    ) {
         composable(Destination.HOME.route) {
-            HomeContent(modifier = modifier.padding(paddingValues).padding(16.dp))
+            HomeContent()
         }
         composable(Destination.WORKOUTS.route) {
-            WorkoutContent(modifier = modifier.padding(paddingValues).padding(16.dp))
+            WorkoutListContentUI()
         }
         composable(Destination.HISTORY.route) {
-            HistoryContent(modifier = modifier.padding(paddingValues).padding(16.dp))
+            HistoryContent()
         }
         composable(Destination.PROGRESS.route) {
-            ProgressContent(modifier = modifier.padding(paddingValues).padding(16.dp))
+            ProgressContent()
         }
         composable(Destination.PROFILE.route) {
-            ProfileContent(modifier = modifier.padding(paddingValues).padding(16.dp))
+            ProfileContent()
         }
     }
 }

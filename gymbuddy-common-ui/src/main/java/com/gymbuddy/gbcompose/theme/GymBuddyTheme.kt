@@ -38,7 +38,7 @@ private val GymBuddyDarkColorScheme = darkColorScheme(
     onSecondary = Color(0xFF1C1C1E),
     background = Color(0xFF2F4858),
     onBackground = Color(0xFFE0E0E0),
-    surface = Color(0xFF2F4858),
+    surface = Color(0xFF1C2C3A),
     onSurface = Color(0xFFE0E0E0),
     error = Color(0xFFFF3B30)
 )

@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.gymbuddy.gbcompose.theme.GymBuddyTheme
-import com.gymbuddy.gymbuddy.ui.views.GymBuddyContent
+import com.gymbuddy.ui.views.GymBuddyContent
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
