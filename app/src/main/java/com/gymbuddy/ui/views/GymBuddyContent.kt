@@ -1,10 +1,16 @@
 package com.gymbuddy.ui.views
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -21,17 +27,23 @@ fun GymBuddyContent() {
 
     val currentDestination by navController.currentBackStackEntryAsState()
 
-    val isBottomBarVisible = remember(currentDestination) {
-        when (currentDestination?.destination?.route ?: "") {
-            Destination.WorkoutSession.ROUTE -> false
-            else -> true
+    val isBottomBarVisible by remember(currentDestination) {
+        derivedStateOf {
+            when (currentDestination?.destination?.route ?: "") {
+                Destination.WorkoutSession.ROUTE -> false
+                else -> true
+            }
         }
     }
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         bottomBar = {
-            if (isBottomBarVisible) {
+            AnimatedVisibility(
+                visible = isBottomBarVisible,
+                enter = slideInVertically { it } + fadeIn(),
+                exit = slideOutVertically { it } + fadeOut()
+            ) {
                 GymBuddyBottomBar(navController = navController)
             }
         }

@@ -19,8 +19,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.gymbuddy.feature.home.HomeContent
-import com.gymbuddy.feature.workout.ui.WorkoutListContentUI
-import com.gymbuddy.feature.workout.ui.WorkoutSessionContentUI
+import com.gymbuddy.feature.workout.ui.list.WorkoutListContentUI
+import com.gymbuddy.feature.workout.ui.session.WorkoutSessionContentUI
 import com.gymbuddy.navigation.Destination.WorkoutSession
 
 @Composable

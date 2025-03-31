@@ -1,4 +1,4 @@
-package com.gymbuddy.feature.workout.ui
+package com.gymbuddy.feature.workout.ui.list
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -31,9 +31,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.gymbuddy.feature.workout.R
-import com.gymbuddy.feature.workout.WorkoutListEvent
-import com.gymbuddy.feature.workout.WorkoutListIntent
-import com.gymbuddy.feature.workout.WorkoutListViewModel
+import com.gymbuddy.feature.workout.ui.WorkoutPlanUI
 import com.gymbuddy.gbcompose.preview.PreviewWithModes
 import com.gymbuddy.gbcompose.theme.GymBuddyTheme
 import com.gymbuddy.navigation.Destination

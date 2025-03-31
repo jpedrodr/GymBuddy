@@ -1,4 +1,4 @@
-package com.gymbuddy.feature.workout
+package com.gymbuddy.feature.workout.ui.list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -72,14 +72,14 @@ sealed class WorkoutListIntent {
     data object StartWorkout : WorkoutListIntent()
 }
 
-sealed class WorkoutListEvent {
-    data class StartWorkout(val workoutPlan: WorkoutPlanUiModel) : WorkoutListEvent()
-}
-
 data class WorkoutListState(
     val isLoading: Boolean = false,
     val plans: List<WorkoutPlanUiModel> = emptyList(),
 ) {
     val canStartWorkout: Boolean
         get() = plans.any { it.isSelected }
+}
+
+sealed class WorkoutListEvent {
+    data class StartWorkout(val workoutPlan: WorkoutPlanUiModel) : WorkoutListEvent()
 }
