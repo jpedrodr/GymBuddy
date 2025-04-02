@@ -2,6 +2,7 @@ package com.gymbuddy.feature.workout.ui.list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.gymbuddy.domain.workout.usecase.GetWorkoutPlansUseCase
 import com.gymbuddy.feature.workout.model.WorkoutPlanUiModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -14,7 +15,9 @@ import javax.inject.Inject
 import kotlin.random.Random
 
 @HiltViewModel
-class WorkoutListViewModel @Inject constructor() : ViewModel() {
+class WorkoutListViewModel @Inject constructor(
+    getWorkoutPlansUseCase: GetWorkoutPlansUseCase,
+) : ViewModel() {
 
     private val _uiState = MutableStateFlow(WorkoutListState())
     val uiState = _uiState.asStateFlow()

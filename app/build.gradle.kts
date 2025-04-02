@@ -47,6 +47,7 @@ android {
 dependencies {
     implementation(project(":gymbuddy-common-ui"))
     implementation(project(":navigation"))
+    implementation(project(":gymbuddy-core"))
     implementation(project(":feature:home"))
     implementation(project(":feature:workout"))
 

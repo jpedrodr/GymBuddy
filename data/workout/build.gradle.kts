@@ -6,12 +6,13 @@ plugins {
 }
 
 android {
-    namespace = "com.gymbuddy.domain.workout"
+    namespace = "com.gymbuddy.data.workout"
     compileSdk = 35
 
     defaultConfig {
         minSdk = 33
 
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -34,7 +35,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":gymbuddy-core"))
+    implementation(project(":domain:workout"))
 
     implementation(libs.androidx.core.ktx)
 

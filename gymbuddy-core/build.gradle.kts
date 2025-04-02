@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.gymbuddy.domain.workout"
+    namespace = "com.gymbuddy.core"
     compileSdk = 35
 
     defaultConfig {
@@ -34,8 +34,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":gymbuddy-core"))
-
     implementation(libs.androidx.core.ktx)
 
     implementation(libs.hilt.android)

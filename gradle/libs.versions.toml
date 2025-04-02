@@ -1,7 +1,7 @@
 [versions]
 agp = "8.9.1"
 kotlin = "2.0.21"
-coreKtx = "1.15.0"
+core-ktx = "1.15.0"
 junit = "4.13.2"
 junit-version = "1.2.1"
 espresso-core = "3.6.1"
@@ -18,7 +18,7 @@ kotlin-kapt = "2.1.20"
 hilt-navigation = "1.2.0"
 
 [libraries]
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junit-version" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
