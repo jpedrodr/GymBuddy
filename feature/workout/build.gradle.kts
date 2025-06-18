@@ -39,6 +39,7 @@ dependencies {
     implementation(project(":gymbuddy-common-ui"))
     implementation(project(":navigation"))
     implementation(project(":domain:workout"))
+    implementation(project(":data:workout"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
