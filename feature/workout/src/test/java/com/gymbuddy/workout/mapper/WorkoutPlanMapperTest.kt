@@ -32,7 +32,6 @@ class WorkoutPlanMapperTest {
             WorkoutPlanUiModel(id = "plan2", name = "Leg Day", exercisesCount = 0)
         )
 
-
         assertEquals(expected, result)
     }
 }
