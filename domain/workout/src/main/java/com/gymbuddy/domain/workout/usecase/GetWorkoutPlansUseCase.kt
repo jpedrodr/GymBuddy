@@ -1,6 +1,7 @@
 package com.gymbuddy.domain.workout.usecase
 
 import com.gymbuddy.core.IoDispatcher
+import com.gymbuddy.domain.workout.model.WorkoutPlan
 import com.gymbuddy.domain.workout.repository.WorkoutRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
@@ -11,7 +12,7 @@ class GetWorkoutPlansUseCase @Inject constructor(
     @IoDispatcher private val ioDispatcher: CoroutineDispatcher
 ) {
 
-    suspend operator fun invoke() = withContext(ioDispatcher) {
+    suspend operator fun invoke(): List<WorkoutPlan> = withContext(ioDispatcher) {
         repository.getWorkouts()
     }
 }

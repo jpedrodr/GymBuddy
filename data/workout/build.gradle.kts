@@ -43,4 +43,5 @@ dependencies {
     testImplementation(libs.junit)
 
     kapt(libs.hilt.android.compiler)
+    testImplementation(kotlin("test"))
 }

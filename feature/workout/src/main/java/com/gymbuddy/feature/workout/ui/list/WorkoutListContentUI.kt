@@ -81,7 +81,7 @@ fun WorkoutListContentUI(
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
                 items(
-                    items = uiState.plans,
+                    items = uiState.workoutPlans,
                     key = { it.id }
                 ) {
                     WorkoutPlanUI(
