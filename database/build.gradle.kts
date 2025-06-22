@@ -47,6 +47,7 @@ dependencies {
     testImplementation(libs.junit)
 
     kapt(libs.hilt.android.compiler)
-//    ksp(libs.room.compiler)
-    kapt(libs.room.compiler)
+    ksp(libs.room.compiler)
+
+//    kapt(libs.room.compiler)
 }
