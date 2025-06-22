@@ -6,7 +6,7 @@ import com.gymbuddy.domain.workout.model.WorkoutPlan
  * A model used to represent a [WorkoutPlan] in the UI
  */
 data class WorkoutPlanUiModel(
-    val id: String,
+    val id: Int,
     val name: String, // e.g., "Leg Day"
     val exercisesCount: Int,
     val isSelected: Boolean = false

@@ -13,6 +13,6 @@ class GetWorkoutPlansUseCase @Inject constructor(
 ) {
 
     suspend operator fun invoke(): List<WorkoutPlan> = withContext(ioDispatcher) {
-        repository.getWorkouts()
+        repository.getWorkoutPlans()
     }
 }

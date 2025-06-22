@@ -10,26 +10,26 @@ class WorkoutPlanMapperTest {
 
     @Test
     fun `toUiModel - maps a WorkoutPlan correctly`() {
-        val dataModel = WorkoutPlan(id = "plan1", name = "Chest Day", exercises = emptyList())
+        val dataModel = WorkoutPlan(id = 1, name = "Chest Day", exercises = emptyList())
 
         val result = dataModel.toUiModel()
 
-        val expected = WorkoutPlanUiModel(id = "plan1", name = "Chest Day", exercisesCount = 0)
+        val expected = WorkoutPlanUiModel(id = 1, name = "Chest Day", exercisesCount = 0)
         assertEquals(expected, result)
     }
 
     @Test
     fun `toUiModel - maps a list of WorkoutPlan correctly`() {
         val dataModels = listOf(
-            WorkoutPlan(id = "plan1", name = "Chest Day", exercises = emptyList()),
-            WorkoutPlan(id = "plan2", name = "Leg Day", exercises = emptyList())
+            WorkoutPlan(id = 1, name = "Chest Day", exercises = emptyList()),
+            WorkoutPlan(id = 2, name = "Leg Day", exercises = emptyList())
         )
 
         val result = dataModels.toUiModel()
 
         val expected = listOf(
-            WorkoutPlanUiModel(id = "plan1", name = "Chest Day", exercisesCount = 0),
-            WorkoutPlanUiModel(id = "plan2", name = "Leg Day", exercisesCount = 0)
+            WorkoutPlanUiModel(id = 1, name = "Chest Day", exercisesCount = 0),
+            WorkoutPlanUiModel(id = 2, name = "Leg Day", exercisesCount = 0)
         )
 
         assertEquals(expected, result)

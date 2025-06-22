@@ -23,9 +23,9 @@ class GetWorkoutPlansUseCaseTest {
 
     @Before
     fun setup() {
-        coEvery { repository.getWorkouts() } returns listOf(
-            WorkoutPlan(id = "1", name = "WorkoutPlan 1", exercises = emptyList()),
-            WorkoutPlan(id = "2", name = "WorkoutPlan 2", exercises = emptyList())
+        coEvery { repository.getWorkoutPlans() } returns listOf(
+            WorkoutPlan(id = 1, name = "WorkoutPlan 1", exercises = emptyList()),
+            WorkoutPlan(id = 2, name = "WorkoutPlan 2", exercises = emptyList())
         )
     }
 
@@ -34,8 +34,8 @@ class GetWorkoutPlansUseCaseTest {
         val result = useCase()
 
         val expected = listOf(
-            WorkoutPlan(id = "1", name = "WorkoutPlan 1", exercises = emptyList()),
-            WorkoutPlan(id = "2", name = "WorkoutPlan 2", exercises = emptyList())
+            WorkoutPlan(id = 1, name = "WorkoutPlan 1", exercises = emptyList()),
+            WorkoutPlan(id = 2, name = "WorkoutPlan 2", exercises = emptyList())
         )
 
         assertEquals(expected, result)

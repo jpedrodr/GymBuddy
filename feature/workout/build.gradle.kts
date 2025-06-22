@@ -36,7 +36,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":gymbuddy-common-ui"))
+    implementation(project(":common-ui"))
     implementation(project(":navigation"))
     implementation(project(":domain:workout"))
     implementation(project(":data:workout"))

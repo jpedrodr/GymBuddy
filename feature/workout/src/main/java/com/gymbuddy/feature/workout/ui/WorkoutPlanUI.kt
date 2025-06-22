@@ -60,7 +60,7 @@ fun WorkoutPlanUI(workoutPlan: WorkoutPlanUiModel, onClick: () -> Unit, modifier
 @PreviewWithModes
 fun WorkoutPlanUIPreview() {
     val workoutPlan = WorkoutPlanUiModel(
-        id = "1",
+        id = 1,
         name = "Workout plan #1",
         exercisesCount = 5
     )

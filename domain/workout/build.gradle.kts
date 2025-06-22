@@ -34,8 +34,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":gymbuddy-core"))
 
+    implementation(project(":core"))
     implementation(libs.androidx.core.ktx)
 
     implementation(libs.hilt.android)
