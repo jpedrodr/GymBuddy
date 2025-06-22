@@ -19,7 +19,7 @@ sealed class Destination(val route: String) {
     data object Profile : Destination("profile")
 
     // An actual workout session based on a workout plan
-    data class WorkoutSession(val workoutPlanId: String) :
+    data class WorkoutSession(val workoutPlanId: Int) :
         Destination("$BASE_ROUTE/$workoutPlanId") {
         companion object {
             private const val BASE_ROUTE = "workout/session/withPlan"
